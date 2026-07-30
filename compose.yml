@@ -1,0 +1,18 @@
+name: clinic-os
+
+services:
+  postgres:
+    image: docker.io/library/postgres:18
+    container_name: clinic_os_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: zaid1234
+      POSTGRES_DB: clinic_os
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
